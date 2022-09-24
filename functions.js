@@ -4,7 +4,7 @@ queryBtn.addEventListener('click', getData);
 const today = new Date;
 const year = today.getFullYear();
 const month = today.getMonth() + 1;
-const day = today.getDate();
+const day = today.getDate()-1;
 
 
 async function getData(e) {
@@ -29,7 +29,7 @@ function setPrayerTime(data, city) {
   if (data.code === 200) {
 
     setDate(data);
-
+console.log(data.data[24]);
     document.getElementById("cardTitle").innerHTML = "مواقيت الصلاة لمدينة " + city;
 
     const fajerTime = data.data[day].timings.Fajr.slice(0,5);
@@ -89,22 +89,26 @@ function clear() {
     e.removeChild(child);
     child = e.lastElementChild;
   }
-  // document.querySelector("dateHeader").remove();
-  // $("dateHeader").remove();
 
 }
 
 function setDate(data) {
   if (document.body.contains(document.getElementById('dateHeader'))) return;
   else {
-    const dateHeader = document.createElement("div");
-    dateHeader.classList.add("card-header");
-    dateHeader.setAttribute("id", "dateHeader");
+    const arDateHeader = document.createElement("div");
+    arDateHeader.classList.add("card-header");
+    arDateHeader.setAttribute("id", "dateHeader");
     var arDay =  data.data[day].date.hijri.weekday.ar;
     var hijri =data.data[day].date.hijri.day.toArabicDigits()+" / "+data.data[day].date.hijri.month.ar+" / "+data.data[day].date.hijri.year.toArabicDigits();
-  //  var date =
-    dateHeader.innerHTML = arDay +"\n"+hijri;
-    $(dateHeader).insertAfter(document.getElementById("card-header"));
+    arDateHeader.innerHTML = arDay +"\n"+hijri;
+    $(arDateHeader).insertAfter(document.getElementById("card-header"));
+
+    const enDateHeader = document.createElement("div");
+    enDateHeader.classList.add("card-header");
+    enDateHeader.setAttribute("id", "dateHeader");
+    enDateHeader.setAttribute("dir", "ltr");
+    enDateHeader.innerHTML = data.data[day].date.readable;
+    $(enDateHeader).insertAfter(document.getElementById("dateHeader"));
   }
 }
 

@@ -9,7 +9,7 @@ header{
 }
 h1{
   padding-top: 20px;
-  color: #3B3C63 !important;
+  /* color: #3B3C63 !important; */
   text-align: center;
   font-family: "Amiri";
   text-align: center;
@@ -42,7 +42,7 @@ p,a,label, li,ul,div{
 
 .card{
   margin-bottom: 50px;
-  background-color: #C4D0DA;
+  /* background-color: #C4D0DA; */
 }
 
 #queryBtn{
