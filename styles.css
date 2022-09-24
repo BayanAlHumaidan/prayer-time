@@ -8,7 +8,6 @@ header{
   margin: 50px;
 }
 h1{
-  /* font-family: "Tajawal"!important; */
   padding-top: 20px;
   color: #3B3C63 !important;
   text-align: center;
@@ -43,12 +42,9 @@ p,a,label, li,ul,div{
 
 .card{
   margin-bottom: 50px;
-  /* background-color: #C4D0DA; */
+  background-color: #C4D0DA;
 }
 
-/* #card-header{
-  background-color: #E9DCD1
-} */
 #queryBtn{
   background-color: #C4D0DA;
 }

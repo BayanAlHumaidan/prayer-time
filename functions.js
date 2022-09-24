@@ -101,7 +101,7 @@ function setDate(data) {
     dateHeader.classList.add("card-header");
     dateHeader.setAttribute("id", "dateHeader");
     var arDay =  data.data[day].date.hijri.weekday.ar;
-    var hijri =data.data[day].date.hijri.day.toArabicDigits()+" / "+data.data[0].date.hijri.month.ar+" / "+data.data[0].date.hijri.year.toArabicDigits();
+    var hijri =data.data[day].date.hijri.day.toArabicDigits()+" / "+data.data[day].date.hijri.month.ar+" / "+data.data[day].date.hijri.year.toArabicDigits();
   //  var date =
     dateHeader.innerHTML = arDay +"\n"+hijri;
     $(dateHeader).insertAfter(document.getElementById("card-header"));
